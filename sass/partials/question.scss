@@ -1,0 +1,157 @@
+.question {
+    
+    $margin-mobile: 1.5rem;
+    $margin-tablet: 3rem;
+    $margin-desktop: 5rem;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -10;
+    
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+    
+    font-size: 1em;
+    
+    @include tablet {
+        font-size: 1em;
+    }
+    
+    @include desktop {
+        font-size: 1.5em;
+    }
+    
+    &__text {
+        
+        position: absolute;
+        
+        width: 25%;
+        
+        @include tablet {
+            width: 20%;
+        }
+        
+        @include desktop {
+            width: 15%;
+        }
+        
+        &_question {
+            
+            width: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: $margin-mobile;
+            
+            @include tablet {
+                top: $margin-tablet;
+            }
+            
+            @include desktop {
+                top: $margin-desktop;
+            }
+
+        }
+        
+        &_answer-1 {
+            
+            top: 50%;
+            left: $margin-mobile;
+            transform: translate(0, -50%);
+            
+            @include tablet {
+                left: $margin-tablet;
+            }
+            
+            @include desktop {
+                left: $margin-desktop;
+            }
+
+        }
+        
+        &_answer-2 {
+            
+            top: 50%;
+            right: $margin-mobile;
+            transform: translate(0, -50%);
+            
+            @include tablet {
+                right: $margin-tablet;
+            }
+            
+            @include desktop {
+                right: $margin-desktop;
+            }
+
+            
+        }
+        
+        &_ok,
+        &_drag {
+            
+            left: 50%;
+            transform: translate(-50%, -100%);
+            
+            transition: opacity .5s;
+            
+            bottom: $margin-mobile;
+            
+            @include tablet {
+                bottom: $margin-tablet;
+            }
+            
+            @include desktop {
+                bottom: $margin-desktop;
+            }
+
+        }
+        
+        &_drag {
+            
+            $distance: 25%;
+            $duration: 12%;
+            
+            @keyframes drag-hint {
+                
+                0% {
+                    transform: translate(-50%, -100%);
+                }
+                
+                #{ $duration * 1.5 } {
+                    transform: translate(-50% - $distance, -100%);
+                }
+                
+                #{ $duration * 3.5 } {
+                    transform: translate(-50% + $distance, -100%);
+                }
+                
+                #{ $duration * 5 } {
+                    transform: translate(-50%, -100%);
+                }
+                
+            }
+            
+            @keyframes drag-hint-continuous {
+                
+                from {
+                    transform: translate(-50% - $distance, -100%);
+                }
+                
+                to {
+                    transform: translate(-50% + $distance, -100%);
+                }
+                
+            }
+            
+            transform: translate(-50%, -100%);
+            
+            animation: drag-hint-continuous 1s ease-in-out infinite alternate;
+            pointer-events: none;
+            
+        }
+        
+    }
+    
+}

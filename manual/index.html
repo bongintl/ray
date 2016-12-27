@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual</title>
+    <style>
+        body{ font-family: sans-serif; margin: 3em; }
+        img {max-width: 400px; display: block; }
+    </style>
+</head>
+<body>
+    
+    <h1>Shapes</h1>
+    <p>Our basic building blocks.</p>
+    <p>Standard parameters: position, rotation</p>
+    
+    <h2>Sphere</h2>
+    <img src="img/sphere.png"></img>
+    <p>Parameters: radius</p>
+    
+    <h2>Box</h2>
+    <img src="img/box.png"></img>
+    <p>Parameters: size (x, y, z)</p>
+    
+    <h2>RoundBox</h2>
+    <img src="img/roundbox.png"></img>
+    <p>Parameters: size (x, y, z), corner radius</p>
+    
+    <h2>Cylinder</h2>
+    <img src="img/cylinder.png"></img>
+    <p>Parameters: radius, height</p>
+    
+    <h2>Torus</h2>
+    <img src="img/torus.png"></img>
+    <p>Parameters: radius, thickness</p>
+    
+    <h2>Union</h2>
+    <img src="img/union.png"></img>
+    <small>union(sphere, sphere) = butt</small>
+    <p>Parameters: none</p>
+    
+    <h2>Subtract</h2>
+    <img src="img/subtract.png"></img>
+    <small>subtract(sphere, sphere)</small>
+    <p>Parameters: none</p>
+    
+    <h2>Intersect</h2>
+    <img src="img/intersect.png"></img>
+    <small>intersect(sphere, sphere)</small>
+    <p>The shape where two other shapes overlap.</p>
+    <p>Parameters: none</p>
+    
+    <h2>Smooth</h2>
+    <img src="img/smooth.png"></img>
+    <small>smooth(sphere, sphere, 0.2)</small>
+    <p>Same as Union, but rounds off the join.</p>
+    <p>Parameters: amount</p>
+    
+    <h2>Blend</h2>
+    <img src="img/blend.png">
+    <small>blend(sphere, box, 0.5)</small>
+    <p>Blends smoothly between two primitives.</p>
+    <p>Parameters: amount</p>
+    
+    <h2>Noise</h2>
+    <img src="img/noise1d.png"></img>
+    <small>sphere + 1D noise</small>
+    <img src="img/noise2d.png"></img>
+    <small>sphere + 2D noise</small>
+    <img src="img/noise3d.png"></img>
+    <small>sphere + 3D noise</small>
+    <p>Random permutation of the surface. Super important and versatile, our swiss army knife.</p>
+    <p>Parameters: amount, scale (x, y, z), speed</p>
+    
+    <h2>Wave</h2>
+    <img src="img/wave.png" alt="">
+    <small>box + wave</small>
+    <p>parameters: amplitude, frequency, axis</p>
+    
+    <h2>Twist</h2>
+    <img src="img/twist1.png">
+    <small>box + twist(0.5)</small>
+    <img src="img/twist2.png">
+    <small>box + twist(3)</small>
+    <p>parameters: amount, axis</p>
+    
+    <h2>Repeat</h2>
+    <img src="img/repeat.png"></img>
+    <small>sphere + repeat</small>
+    <p>Repeats a primitive to infinity.</p>
+    <p>Not very blob by itself, but can be cropped with a Subtract or Intersect.</p>
+    <img src="img/repeatcrop.png">
+    <small>intersect(box + repeat, sphere)</small>
+    <p>Parameters: spacing (x, y, z)</p>
+    
+</body>
+</html>
