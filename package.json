@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "eases": "^1.0.8",
+    "glsl-sdf-ops": "0.0.3",
     "jquery": "^3.1.1",
     "lodash": "^4.17.2",
     "promise": "^7.1.1",
